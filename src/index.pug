@@ -1,0 +1,32 @@
+extends ./main.layout.pug
+
+block content
+  .welcome-section
+    section.fullscreen-section.hero
+      .container.hero__container
+        header.header
+          .header__logo
+            a.logo(href="") ВА
+          .header__menu 
+            nav.menu
+              ul.menu__list
+                - var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+                each item in menuItems 
+                  li.menu__item
+                    a(href="#").menu__link #{item}
+          .header__social-buttons
+            ul.socials
+              - var socials = ['insta', 'vk', 'github', 'envelope'];
+              each item in socials
+                li.socials__item
+                  a(href="#").socials__link
+                    +icon(item, 'socials__icon')
+
+        .hero__content
+          .userinfo
+            .userinfo__title Личный сайт #[br] веб разработчика
+            .userinfo__name Владимир #[br] Астаханов
+
+        .hero__bottom-buttons
+          .scroll-down
+            a(href="").scroll-down__btn Скролл
