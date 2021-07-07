@@ -1,37 +1,31 @@
 .hero {
-  padding-top: 58px;
+  padding-top: 54px;
   position: relative;
 }
 
 .hero__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  width: 1497px;
-  height: 897px;
-  margin: 0px 145px 0px 158px; 
+  height: 100%;
 }
 
 .hero__content {
-  flex: 1;
+  flex: .8;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 24%;
+
+  @include desktop {
+    padding: 0 10%;
+  }
 }
 
 .hero__downbutton {
-  position: relative;
+  position: absolute;
+  bottom: 4%;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: center;
-  width: 94px;
-  height: 14px;
-  margin: 0px 707px 0px 695px;
-}
-
-.hero__bottom-buttons {
   display: flex;
   justify-content: center;
 }

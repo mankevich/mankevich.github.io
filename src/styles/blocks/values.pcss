@@ -1,20 +1,36 @@
 .values {
   margin-bottom: 114px;
+
+  @include phones {
+    margin-bottom: 75px;
+  }
 }
 
 .values__container {
   position: relative;
-
+  @include tablets {
+    padding-bottom: 350px;
+  }
   &:before {
     content: "";
     position: absolute;
     background: url('~images/decor/bag.jpg') left bottom / contain no-repeat;
     display: block;
+    bottom: 5%;
+    height: 79%;
+    width: 69%;
+    left: -20%;
+    @include tablets {
+      bottom: 0;
+      left: 50%;
+      height: 300px;
+      transform: translateX(-50%);
+      background-position: center center;
+    }
 
-    bottom: 30px;
-    height: 712px;
-    width: 627px;
-    left: -73px;
+    @include phones {
+      width: 100%;
+    }
   }
 }
 
@@ -29,8 +45,21 @@
 }
 
 .values__title-container {
-  width: 601px;
-	height: 184px;
+  width: 38%;
+  margin-left: 6%;
+  @include desktop {
+    width: 42%;
+    margin-left: 0;
+  }
+  @include tablets {
+    width: 68%;
+    text-align: center;
+  }
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
 }
 
 .values__title-text {
@@ -48,9 +77,14 @@
 .values__widget {
   display: flex;
   justify-content: flex-end;
+  @include tablets {
+    justify-content: center;
+  }
 }
 
 .values__widget-container {
-  width: 750px;
-  height: 468px;
+  width: 66%;
+  @include tablets {
+    width: 95%;
+  }
 }

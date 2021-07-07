@@ -1,7 +1,12 @@
 .skill {
   position: relative;
-  width: 138px;
-  height: 138px;
+  width: 166px;
+  height: 166px;
+
+  @include tablets {
+    width: 135px;
+    height: 135px;
+  }
 }
 
 .skill__circle {
@@ -27,4 +32,7 @@
   color: rgba($text-color, .5);
   padding: 14px;
 
+  @include phones {
+    font-size: 16px;
+  }
 }

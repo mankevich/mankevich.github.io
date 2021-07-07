@@ -5,13 +5,15 @@
 }
 
 .header__menu {
-  width: 478px;
-  height: 22px;
-  margin: 0px 411px 0px 391px;
+  width: 55%;
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .header__buttons {
-  width: 216px;
-  height: 32px;
-  margin: 0px 0px 0px 0px;
+  @include phones {
+    display: none;
+  }
 }
