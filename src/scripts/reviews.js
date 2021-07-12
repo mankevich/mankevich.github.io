@@ -13,7 +13,9 @@ new Vue({
       reviews: [],
       sliderOptions: {
         slidesPerView: 2
-      }
+      },
+      left_inactive: true,
+      right_inactive: false
     }
   },
   methods: {
@@ -34,9 +36,18 @@ new Vue({
         case "prev" :
           slider.slidePrev();
           break;
-      }
+      }   
+    },
+
+    slide_swiped() {
+      const slider = this.$refs["slider"].$swiper;
+      console.log("isBeginning = " + slider.isBeginning + "; isEnd = " + slider.isEnd + "; (Перелистывание)");
+      this.left_inactive = slider.isBeginning;
+      this.right_inactive = slider.isEnd;
     }
+
   },
+
   created() {
     const data = require("../data/reviews.json");
     this.reviews = this.requireImagesToArray(data)
