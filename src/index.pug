@@ -2,33 +2,58 @@ extends ./main.layout.pug
 
 block content
   .welcome-section
-    section.fullscreen-section.hero
-      .container.hero__container
-        header.header
+    #open-menu      
+      .header__pop-up-menu(:class="{closed : open}")
+        .background__menu
           .header__logo
             a.logo(href="") ВА
-          .header__menu 
-            nav.menu
-              ul.menu__list
-                - var menuLinks = ["Обо мне", "Навыки", "Работы", "Отзывы"];
-                each item in menuLinks 
-                  li.menu__item
-                    a(href="#").menu__link #{item}
-          .header__buttons
-            ul.socials
-              - var socials = ['insta', 'vk', 'github', 'envelope'];
-              each item in socials
-                li.socials__item
-                  a(href="#").socials__link
-                    +icon(item, 'socials__icon')
+        .socials__menu
+          .socials__link
+            a(href="#" @click="openClose()")
+              +icon('cross', 'socials__icon')
+          ul.menu__list
+            - var menuLinks = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+            each item in menuLinks 
+              li.menu__item
+                a(href="#").menu__link #{item}
+          ul.socials
+            - var socials = ['insta', 'vk', 'github', 'envelope'];
+            each item in socials
+              li.socials__item
+                a(href="#").socials__link
+                  +icon(item, 'socials__icon')
 
-        .hero__content
-          .userinfo
-            .userinfo__title Личный сайт #[span.userinfo__occ веб разработчика]
-            .userinfo__name Владимир #[br] Астаханов
-        .hero__downbutton
-          .scroll-down
-            a(href="").scroll-down__btn Скролл
+      section.fullscreen-section.hero
+        .container.hero__container
+          header.header
+            .header__logo
+              a.logo(href="") ВА
+            .header__menu 
+              nav.menu
+                ul.menu__list
+                  - var menuLinks = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+                  each item in menuLinks 
+                    li.menu__item
+                      a(href="#").menu__link #{item}
+            .header__buttons
+              ul.socials
+                - var socials = ['insta', 'vk', 'github', 'envelope'];
+                each item in socials
+                  li.socials__item
+                    a(href="#").socials__link
+                      +icon(item, 'socials__icon')
+            
+            .header__open-menu
+              a(href="#").socials__link(@click="openClose()")
+                +icon('menu-open', 'socials__icon')
+
+          .hero__content
+            .userinfo
+              .userinfo__title Личный сайт #[span.userinfo__occ веб разработчика]
+              .userinfo__name Владимир #[br] Астаханов
+          .hero__downbutton
+            .scroll-down
+              a(href="").scroll-down__btn Скролл
     
     section.about
       .container.about__container
@@ -87,37 +112,10 @@ block content
       .container.works__container
         .section-title.works__section-title Мои работы
         .works__content
-          .works-slider
-          
-            .works-slider__pics(data-slide="2")
-              .works-slider__pics-content
-                +image('content/slider-1.jpg', 'works-slider__fullpic')
-                .works-slider__buttons
-                  a(href="#").works-slider__btn.works-slider__btn_next
-                  a(href="#").works-slider__btn.works-slider__btn_prev
-                ul.works-slider__thumbs-desktop
-                  - for (var i = 4; i > 0; i--)
-                    li.works-slider__thumb-item(class=`${i === 1 ? 'active' : ''}`)
-                      a(href="").works-slider__thumb-link
-                        +image(`content/slider-${i}.jpg`, 'works-slider__thumb')
-                
-                ul.works-slider__thumbs-tablets
-                  - for (var i = 3; i > 0; i--)
-                    li.works-slider__thumb-item(class=`${i === 1 ? 'active' : ''}`)
-                      a(href="").works-slider__thumb-link
-                        +image(`content/slider-${i}.jpg`, 'works-slider__thumb')
+          #preview-component
 
-            .works-slider__data
-              ul.works-slider__tags
-                - var tags = ['HTML', 'CSS', 'JavaScript'];
-                each item in tags
-                  li.works-slider__tag-item 
-                    .tag #{item}
-              .works-slider__title Сайт школы образования
-              .works-slider__desc
-                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              .works-slider__link 
-                a(href="").iconed-link Посмотреть сайт
+          
+
 
   .triangles.triangles_bottom
     svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left

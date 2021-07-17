@@ -1,0 +1,75 @@
+.header__open-menu {
+  display: none;
+
+  @include tablets {
+    display: flex;
+  }
+}
+
+.header__pop-up-menu {
+  display: none;
+
+  @include tablets {
+    display: flex;
+    position: absolute;
+    z-index: 10;
+
+    width: 100%;
+    min-height: 300px;
+    background: url('~images/bg/budda.jpg') top right 20% / cover no-repeat;
+    
+    justify-content: space-between;
+  }
+}
+
+.header__pop-up-menu.closed {
+  display: none;
+  @include tablets {
+    display: none;
+  }
+}
+
+.background__menu {
+  height: 100%;
+
+  @include phones {
+    display: none;
+  }
+}
+
+.background__menu .header__logo {
+  margin-top: 49px;
+  margin-left: 42px;
+}
+
+.socials__menu {
+  display: flex;
+  background: white;
+  flex-flow: column nowrap;
+  padding: 67px 51px;
+
+  @include phones {
+    width: 100%;
+    min-width: 320px;
+  }
+}
+
+.socials__menu .socials__link {
+  display: flex;
+  max-width: 100%;
+  justify-content: flex-end;
+  margin-bottom: 148px;
+}
+
+.socials__menu .menu__list{
+  flex-flow: column nowrap;
+  margin-bottom: 95px;
+}
+
+.socials__menu .menu__item {
+  margin-bottom: 23px;
+  &:last-child {
+    margin-bottom: 0px;
+  }
+}
+

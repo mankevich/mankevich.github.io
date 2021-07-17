@@ -74,28 +74,11 @@
   object-fit: cover;
 }
 
-.works-slider__thumbs-desktop {
+.works-slider__thumbs {
   position: absolute;
   right: 0;
   bottom: 0;
   width: 18%;
-
-  @include tablets {
-    display: none;
-  }
-
-  @include phones {
-    display: none;
-  }
-}
-
-
-.works-slider__thumbs-tablets {
-  display: none;
-
-  @include desktop {
-    display: none;
-  }
 
   @include tablets {
     display: block;
@@ -109,7 +92,6 @@
     display: none;
   }
 }
-
 
 .works-slider__thumb-item {
   transition: .2s;
@@ -126,6 +108,9 @@
 }
 
 .works-slider__buttons {
+}
+
+.square-btns{
   position: absolute;
   top: 100%;
   right: 0;
