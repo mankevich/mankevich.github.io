@@ -26,6 +26,27 @@
   }
 }
 
+.open_menu_btn {
+  display: block;
+  background-color: Transparent;
+  color: $text-color;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.open_menu_icon {
+  width: 29px;
+  height: 25px;
+  fill: $text-color;
+}
+
+.open_menu_icon:hover {
+  color: $links-color;
+  fill: $links-color;
+}
+
+
 .socials__item {
   margin-right: 40px;
   &:last-child {
@@ -33,8 +54,16 @@
   }
 }
 
+.socials__link:hover {
+  color: $links-color;
+}
+
 .socials__icon {
   width: 25px;
   height: 25px;
   fill: $text-color;
+  
+  &:hover {
+    fill: $links-color;
+  }
 }

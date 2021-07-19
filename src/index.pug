@@ -9,8 +9,12 @@ block content
             a.logo(href="") ВА
         .socials__menu
           .socials__link
-            a(href="#" @click="openClose()")
-              +icon('cross', 'socials__icon')
+            button(
+                type="button"
+                @click="openClose()"
+                ).open_menu_btn
+                +icon('cross', 'open_menu_icon')
+
           ul.menu__list
             - var menuLinks = ["Обо мне", "Навыки", "Работы", "Отзывы"];
             each item in menuLinks 
@@ -43,9 +47,12 @@ block content
                     a(href="#").socials__link
                       +icon(item, 'socials__icon')
             
-            .header__open-menu
-              a(href="#").socials__link(@click="openClose()")
-                +icon('menu-open', 'socials__icon')
+            .header__open-menu              
+              button(
+                type="button"
+                @click="openClose()"
+                ).open_menu_btn
+                +icon('menu-open', 'open_menu_icon')
 
           .hero__content
             .userinfo
@@ -113,9 +120,6 @@ block content
         .section-title.works__section-title Мои работы
         .works__content
           #preview-component
-
-          
-
 
   .triangles.triangles_bottom
     svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
